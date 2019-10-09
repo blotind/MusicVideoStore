@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "d4facd1b-7b29-4033-9e21-9e046eea9457",
+		"name": "Music Video Store",
+		"description": "API testing for the Music Video Store.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8080/musicVideos/3",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/musicVideos/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"musicVideos",
+						"3"
+					]
+				},
+				"description": "Used to delete a specific title using the PathVariable"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/musicVideo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": 3,\n\t\t\"title\": \"Krigsgaldr\",\n\t\t\"album\": \"LIFA\",\n\t\t\"artist\": \"Heilung\",\n\t\t\"duration\": 957,\n\t\t\"genre\": \"Folk\",\n\t\t\"subgenres\": [\"Viking\", \"folk rock\"],\n\t\t\"releaseYear\": 2018\n\t}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/musicVideo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"musicVideo"
+					]
+				},
+				"description": "Used to add a single music video only"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/musicVideos?musicVideoId=4",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": 4,\n\t\t\"title\": \"Santeria\",\n\t\t\"album\": \"Sublime\",\n\t\t\"artist\": \"Sublime\",\n\t\t\"duration\": 555,\n\t\t\"genre\": \"Reggae\",\n\t\t\"subgenres\": [\"Rock\", \"Pop\"],\n\t\t\"releaseYear\": 1996\n\t}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/musicVideos?musicVideoId=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"musicVideos"
+					],
+					"query": [
+						{
+							"key": "musicVideoId",
+							"value": "3"
+						}
+					]
+				},
+				"description": "Update a Music Video this time adding a album field which was previously omitted."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/musicVideos/byGenre/Folk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/musicVideos/byGenre/Folk",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"musicVideos",
+						"byGenre",
+						"Folk"
+					]
+				},
+				"description": "Get all the Music Videos with the Folk Genre."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/musicVideos/bySubgenre/prog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/musicVideos/bySubgenre/prog",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"musicVideos",
+						"bySubgenre",
+						"prog"
+					]
+				},
+				"description": "Get Music Videos where the subGenre is like 'prog'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9090/musicVideos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/musicVideos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"musicVideos"
+					]
+				},
+				"description": "Get all the music videos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/musicVideos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"id\": 501218,\n\t\t\"title\": \"Walk With Me\",\n\t\t\"album\": \"Le Noise\", \n\t\t\"artist\": \"Neil Young\",\n\t\t\"duration\": 247,\n\t\t\"genre\": \"Rock\",\n\t\t\"subgenres\": [\"classic\", \"rock\"],\n\t\t\"releaseYear\": 2010\n\t},\n\t{\n\t\t\"id\": 501219,\n\t\t\"title\": \"Walk Without Me\",\n\t\t\"album\": \"Le Noisey Guy\",\n\t\t\"artist\": \"Neil Old\",\n\t\t\"duration\": 242,\n\t\t\"genre\": \"Blues\",\n\t\t\"subgenres\": [\"prog\", \"rock\"],\n\t\t\"releaseYear\": 2010\n\t},\n\t{\n\t\t\"id\": 1,\n\t\t\"title\": \"Walk Without Me\",\n\t\t\"album\": \"Le Noisey Guy\",\n\t\t\"artist\": \"Neil Oldererererererererere\",\n\t\t\"duration\": 242,\n\t\t\"genre\": \"Blues\",\n\t\t\"subgenres\": [\"prog\", \"rock\"],\n\t\t\"releaseYear\": 2011\n\t},\n\t{\n\t\t\"id\": 2,\n\t\t\"title\": \"Hit me baby one more time\",\n\t\t\"album\": \"It's britney darnit\",\n\t\t\"artist\": \"Britney Spears\",\n\t\t\"duration\": 342,\n\t\t\"genre\": \"Folk\",\n\t\t\"subgenres\": [\"prog\", \"minimal\"],\n\t\t\"releaseYear\": 2012\n\t},\n\t{\n\t\t\"id\": 3,\n\t\t\"title\": \"Krigsgaldr\",\n\t\t\"album\": \"LIFA\",\n\t\t\"artist\": \"Heilung\",\n\t\t\"duration\": 957,\n\t\t\"genre\": \"Folk\",\n\t\t\"subgenres\": [\"Viking\", \"folk rock\"],\n\t\t\"releaseYear\": 2017\n\t},\n\t{\n\t\t\"id\": 4,\n\t\t\"title\": \"Santeria\",\n\t\t\"album\": \"\",\n\t\t\"artist\": \"Sublime\",\n\t\t\"duration\": 555,\n\t\t\"genre\": \"Reggae\",\n\t\t\"subgenres\": [\"Rock\", \"Pop\"],\n\t\t\"releaseYear\": 1996\n\t}\n\t\n]"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/musicVideos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"musicVideos"
+					]
+				},
+				"description": "A batch upload of multiple music videos"
+			},
+			"response": []
+		}
+	]
+}
